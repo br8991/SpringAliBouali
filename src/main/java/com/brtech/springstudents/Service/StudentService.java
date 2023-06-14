@@ -6,13 +6,15 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
-@Service
-public class StudentService {
+public interface StudentService {
+    List<Student> getStudentsList();
 
-    public List<Student> getStudentsList(){
-        return List.of(new Student("Rabah1", "Bekakra", "bekakrarabah@gmailcom", LocalDate.now(), 24),
-                new Student("Sofiane", "Bekakra", "sofiane@gmailcom", LocalDate.now(), 35),
-                new Student("Mohammed Lamine", "Bekakra", "amine@gmailcom", LocalDate.now(), 32));
-    }
+    Student save(Student student);
+
+    Student update(Student student);
+
+    void delete(String email);
+
+    Student findByEmail(String email);
 
 }
