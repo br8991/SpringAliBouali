@@ -10,4 +10,6 @@ public class SpringAliBoualiApplication {
 		SpringApplication.run(SpringAliBoualiApplication.class, args);
 	}
 
+
+
 }
