@@ -1,12 +1,23 @@
 package com.brtech.springstudents.Model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
+@Table
 public class Student {
 
-    private String firstName, lastName, email;
+    @Id
+    @GeneratedValue
+    private Integer id;
+    private String firstName, lastName;
+
+    @Column(unique = true)
+    private String email;
     private LocalDate dateOfBirth;
+    @Transient
     private int age;
 
     public Student() {
